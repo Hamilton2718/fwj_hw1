@@ -177,19 +177,19 @@ Matrix inv_matrix(Matrix a)
     else
     {
         double det = det_matrix(a);
-        // create the A_inv
+        // 创建A逆
         Matrix A_inv = create_matrix(a.rows, a.cols);
-        // 创建余子式
+        // 创建a[i][j]的余子式
         Matrix Aji = create_matrix(a.rows - 1, a.cols - 1);
         int i, j, m, n, t = 0, f, g;
-        // circulate twice to find an element in matrix a
+        // 二重循环遍历a中元素
         for (i = 0; i < a.rows; i++)
         {
             for (j = 0; j < a.cols; j++)
             {
-                // define aji by index f and g
+                // f和g作为Aji的索引
                 f = g = 0;
-                // circulate twice to find all elements in Aij
+                // 找出a[i][j]的余子式的所有元素
                 for (m = 0; m < a.rows; m++)
                 {
                     g = 0;
@@ -209,11 +209,15 @@ Matrix inv_matrix(Matrix a)
                             {
                                 Aji.data[f][g++] = a.data[m][n];
                             }
-                            f++;
                         }
+                        f++;
                     }
                 }
                 A_inv.data[j][i] = det_matrix(Aji) * ((i + j) % 2 ? -1 : 1) / det;
+                if (A_inv.data[j][i] > -0.005 && A_inv.data[j][i] <= 0.000)
+                {
+                    A_inv.data[j][i] = 0.00;
+                }
             }
         }
         return A_inv;
@@ -224,36 +228,75 @@ int rank_matrix(Matrix a)
 {
     // ToDo
     int rank = 0;
+    int rc_min = (a.cols > a.rows ? a.rows : a.cols);
     Matrix A = create_matrix(a.rows, a.cols);
     A = a;
-    int i, j, k;
-    for (i = 0; i < A.rows - 1; i++)
+    int i, j, k, m, n, temp;
+    for (i = 0; i < rc_min; i++)
     {
-        for (j = i + 1; j < A.rows; j++)
+        // 判断对角线上元素是否为0，为0则找该元素对应的n-i+1阶子式中是否有非元素并移到对角线上
+        if (A.data[i][i] == 0)
         {
-            for (k = 0; k < A.cols; k++)
+            int flag = 1;
+            for (m = i; m < A.rows; m++)
             {
-                if (A.data[j][k] != 0)
+                for (n = i; n < A.cols; n++)
                 {
-                    A.data[j][k] -= A.data[j][k] * A.data[i][0] / A.data[j][0];
+                    if (A.data[m][n] != 0)
+                    {
+                        // 列变换
+                        if (n != i)
+                        {
+                            for (j = i; j < A.rows; j++)
+                            {
+                                temp = A.data[j][i];
+                                A.data[j][i] = A.data[j][n];
+                                A.data[j][n] = temp;
+                            }
+                        }
+                        // 行变换
+                        if (m != i)
+                        {
+                            for (j = i; j < A.cols; j++)
+                            {
+                                temp = A.data[i][j];
+                                A.data[i][j] = A.data[m][j];
+                                A.data[m][j] = temp;
+                            }
+                        }
+                        // 跳出一重循环
+                        flag = 0;
+                        break;
+                    }
                 }
-                else
+                // 跳出二重循环
+                if (flag == 0)
                 {
                     break;
                 }
             }
-        }
-    }
-    for (i = 0; i < A.rows; i++)
-    {
-        for (j = 0; j < A.cols; j++)
-        {
-            if (A.data[i][j] != 0)
+            // 若子式全为0则return
+            if (flag)
             {
-                rank++;
-                break;
+                return rank;
             }
         }
+        // 高斯消去
+        for (j = i + 1; j < A.rows; j++)
+        {
+            int f = 1;
+            for (k = i; k < A.cols; k++)
+            {
+                // 判断第i列元素是否为0，为0不需要进行倍加
+                if (A.data[j][i] == 0 && f)
+                {
+                    f = 0;
+                    break;
+                }
+                A.data[j][k] -= A.data[i][k] * A.data[j][i] / A.data[i][i];
+            }
+        }
+        rank++;
     }
     return rank;
 }

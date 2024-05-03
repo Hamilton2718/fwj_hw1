@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Hamilton/Desktop/yourname_hw1/build"
+			"value" : "c:/Users/Hamilton/Desktop/fwj_hw1/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -599,7 +599,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Hamilton/Desktop/yourname_hw1/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/Hamilton/Desktop/fwj_hw1/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -671,7 +671,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Hamilton/Desktop/yourname_hw1"
+			"value" : "C:/Users/Hamilton/Desktop/fwj_hw1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1343,7 +1343,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Hamilton/Desktop/yourname_hw1/build"
+			"value" : "C:/Users/Hamilton/Desktop/fwj_hw1/build"
 		},
 		{
 			"name" : "main_IS_TOP_LEVEL",
@@ -1367,7 +1367,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Hamilton/Desktop/yourname_hw1"
+			"value" : "C:/Users/Hamilton/Desktop/fwj_hw1"
 		}
 	],
 	"kind" : "cache",

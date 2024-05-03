@@ -35,7 +35,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "main::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-main-Debug-3f483b13bdc98a13ed86.json",
+					"jsonFile" : "target-main-Debug-36beb7f9cc0bf6a2b136.json",
 					"name" : "main",
 					"projectIndex" : 0
 				}
@@ -45,8 +45,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Hamilton/Desktop/yourname_hw1/build",
-		"source" : "C:/Users/Hamilton/Desktop/yourname_hw1"
+		"build" : "C:/Users/Hamilton/Desktop/fwj_hw1/build",
+		"source" : "C:/Users/Hamilton/Desktop/fwj_hw1"
 	},
 	"version" : 
 	{

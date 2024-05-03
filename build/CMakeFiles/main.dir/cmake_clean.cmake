@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "C:/Users/Hamilton/Desktop/yourname_hw1/bin/libmain.dll.a"
-  "C:/Users/Hamilton/Desktop/yourname_hw1/bin/main.exe"
-  "C:/Users/Hamilton/Desktop/yourname_hw1/bin/main.exe.manifest"
-  "C:/Users/Hamilton/Desktop/yourname_hw1/bin/main.pdb"
+  "C:/Users/Hamilton/Desktop/fwj_hw1/bin/libmain.dll.a"
+  "C:/Users/Hamilton/Desktop/fwj_hw1/bin/main.exe"
+  "C:/Users/Hamilton/Desktop/fwj_hw1/bin/main.exe.manifest"
+  "C:/Users/Hamilton/Desktop/fwj_hw1/bin/main.pdb"
   "CMakeFiles/main.dir/src/algebra.obj"
   "CMakeFiles/main.dir/src/algebra.obj.d"
   "CMakeFiles/main.dir/src/main.obj"

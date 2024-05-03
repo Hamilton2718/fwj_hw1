@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/Users/Hamilton/Desktop/yourname_hw1/bin/main.exe"
+			"path" : "C:/Users/Hamilton/Desktop/fwj_hw1/bin/main.exe"
 		},
 		{
-			"path" : "C:/Users/Hamilton/Desktop/yourname_hw1/bin/main.pdb"
+			"path" : "C:/Users/Hamilton/Desktop/fwj_hw1/bin/main.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -52,7 +52,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/Hamilton/Desktop/yourname_hw1/inc"
+					"path" : "C:/Users/Hamilton/Desktop/fwj_hw1/inc"
 				}
 			],
 			"language" : "C",

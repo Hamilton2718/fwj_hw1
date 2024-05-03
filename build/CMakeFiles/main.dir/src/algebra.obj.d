@@ -1,6 +1,6 @@
 CMakeFiles/main.dir/src/algebra.obj: \
- C:\Users\Hamilton\Desktop\yourname_hw1\src\algebra.c \
- C:/Users/Hamilton/Desktop/yourname_hw1/inc/algebra.h \
+ C:\Users\Hamilton\Desktop\fwj_hw1\src\algebra.c \
+ C:/Users/Hamilton/Desktop/fwj_hw1/inc/algebra.h \
  D:/mingw/mingw64/x86_64-w64-mingw32/include/stdio.h \
  D:/mingw/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/mingw/mingw64/x86_64-w64-mingw32/include/_mingw.h \

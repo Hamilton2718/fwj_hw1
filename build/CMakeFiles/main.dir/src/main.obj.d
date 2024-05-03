@@ -1,5 +1,5 @@
 CMakeFiles/main.dir/src/main.obj: \
- C:\Users\Hamilton\Desktop\yourname_hw1\src\main.c \
+ C:\Users\Hamilton\Desktop\fwj_hw1\src\main.c \
  D:/mingw/mingw64/x86_64-w64-mingw32/include/stdio.h \
  D:/mingw/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  D:/mingw/mingw64/x86_64-w64-mingw32/include/_mingw.h \
@@ -13,4 +13,4 @@ CMakeFiles/main.dir/src/main.obj: \
  D:/mingw/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
  D:/mingw/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
  D:/mingw/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h \
- C:/Users/Hamilton/Desktop/yourname_hw1/inc/algebra.h
+ C:/Users/Hamilton/Desktop/fwj_hw1/inc/algebra.h

@@ -1,3 +1,11 @@
+<!--
+ * @Author: Hamilton2718 3054970772@qq.com
+ * @Date: 2024-05-03 10:44:28
+ * @LastEditors: Hamilton2718 3054970772@qq.com
+ * @LastEditTime: 2024-05-03 17:05:13
+ * @FilePath: \fwj_hw1\README.md
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 # algebra
 硬件技术团队编程基础作业
 ## 预修要求｜Requirements
@@ -63,3 +71,9 @@ Error: Matrix a and b must have the same rows and cols.
 
 ## 截止日期｜Deadline
 待定
+
+## 解题思路 | Solution
+1. 矩阵的加、减、数乘、矩阵乘法、转置、迹的运算不多赘述；
+2. 矩阵的行列式是通过将第一行展开来求，即遍历第一行元素，求出各自与各自的代数余子式乘积后加和得到；
+3. 矩阵求逆通过公式$ A^{-1}=\frac{A^{*}}{\left |A \right |}$求解，难点在于求$ A^{*}$。可先通过二重循环遍历矩阵中每个元素，再通过二重循环遍历他们的余子式，当指标与元素行列索引相同时continue即可；
+4. 矩阵求秩通过高斯消元法。大的思路就是通过沿着对角线上元素（即行列索引相同的元素，我们姑且称为主元）进行行与行的倍加消去。如果主元为0，则可遍历以主元为左上角元素的子矩阵中是否还有非0元素，有则通过行列变换换到对角线上，无则return当前rank值，接续循环，直至主元遍历完成或子矩阵为全0矩阵。
