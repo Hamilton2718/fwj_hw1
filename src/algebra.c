@@ -70,7 +70,7 @@ Matrix mul_matrix(Matrix a, Matrix b)
                 int sum = 0;
                 for (k = 0; k < a.cols; k++)
                 {
-                    sum += a.data[i][k] + b.data[k][j];
+                    sum += a.data[i][k] * b.data[k][j];
                 }
                 Mul.data[i][j] = sum;
             }
@@ -78,7 +78,7 @@ Matrix mul_matrix(Matrix a, Matrix b)
         return Mul;
     }
     else
-    {
+    {   printf("Error: The number of cols of matrix a must be equal to the number of rows of matrix b.\n");
         return create_matrix(0, 0);
     }
 }
