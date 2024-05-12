@@ -186,7 +186,7 @@ Matrix inv_matrix(Matrix a)
         Matrix A_inv = create_matrix(a.rows, a.cols);
         // 创建a[i][j]的余子式
         Matrix Aji = create_matrix(a.rows - 1, a.cols - 1);
-        int i, j, m, n, t = 0, f, g;
+        int i, j, m, n, f, g;
         // 二重循环遍历a中元素
         for (i = 0; i < a.rows; i++)
         {
@@ -194,11 +194,11 @@ Matrix inv_matrix(Matrix a)
             {
                 // f和g作为Aji的索引
                 f = g = 0;
-                // 找出a[i][j]的余子式的所有元素
+                // 找出划掉i行j列的余子式的所有元素
                 for (m = 0; m < a.rows; m++)
                 {
                     g = 0;
-                    if (m == j)
+                    if (m == i)
                     {
                         continue;
                     }
@@ -206,7 +206,7 @@ Matrix inv_matrix(Matrix a)
                     {
                         for (n = 0; n < a.cols; n++)
                         {
-                            if (n == i)
+                            if (n == j)
                             {
                                 continue;
                             }
