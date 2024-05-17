@@ -174,11 +174,16 @@ double det_matrix(Matrix a)
 Matrix inv_matrix(Matrix a)
 {
     // ToDo
-    if (det_matrix(a) == 0)
+    if (det_matrix(a) == 0 && a.cols != a.rows)
+    {
+        return create_matrix(0, 0);
+    }
+    else if (det_matrix(a) == 0 && a.cols == a.rows)
     {
         printf("Error: The matrix is singular.\n");
         return create_matrix(0, 0);
     }
+
     else
     {
         double det = det_matrix(a);
