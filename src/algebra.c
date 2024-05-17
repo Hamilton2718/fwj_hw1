@@ -241,7 +241,7 @@ int rank_matrix(Matrix a)
     int rc_min = (a.cols > a.rows ? a.rows : a.cols);
     Matrix A = create_matrix(a.rows, a.cols);
     A = a;
-    int i, j, k, m, n, temp;
+    int i, j, k, m, n, temp, aji;
     for (i = 0; i < rc_min; i++)
     {
         // 判断对角线上元素是否为0，为0则找该元素对应的n-i+1阶子式中是否有非元素并移到对角线上
@@ -294,16 +294,15 @@ int rank_matrix(Matrix a)
         // 高斯消去
         for (j = i + 1; j < A.rows; j++)
         {
-            int f = 1;
+            if (A.data[j][i] == 0)
+            {
+                // 判断阶梯头是否为0，为0不需要进行倍加
+                continue;
+            }
+            aji = A.data[j][i];
             for (k = i; k < A.cols; k++)
             {
-                // 判断第i列元素是否为0，为0不需要进行倍加
-                if (A.data[j][i] == 0 && f)
-                {
-                    f = 0;
-                    break;
-                }
-                A.data[j][k] -= A.data[i][k] * A.data[j][i] / A.data[i][i];
+                A.data[j][k] -= A.data[i][k] * aji / A.data[i][i];
             }
         }
         rank++;
